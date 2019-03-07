@@ -1,9 +1,9 @@
 #!bin/bash
+#把所有修改暂存仓库
 git add .
 
+#提交说明
+git commit -m 'kaming提交的修改'
 
-time3=$(date "+%Y-%m-%d %H:%M:%S")
-git commit -m '$time3'
-echo $time3
-
+#把修改推送到远程仓库
 git push -u origin master
