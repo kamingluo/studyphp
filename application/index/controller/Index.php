@@ -8,7 +8,7 @@ class Index
     public function index()
     {
 
-    	dump(Db::query("select * from box_gdt"));
+    	//dump(Db::query("select * from box_gdt"));
 
     	//Log::info('查看是否存在记录');
 
