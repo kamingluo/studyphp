@@ -1,7 +1,7 @@
 <?php
 namespace app\index\controller;
-use think/log;
-use think/Db;
+// use think/log;
+// use think/Db;
 
 class Index
 {
