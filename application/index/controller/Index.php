@@ -1,16 +1,16 @@
 <?php
 namespace app\index\controller;
 use think\log;
-//use think\Db
+use think\Db;
 
 class Index
 {
     public function index()
     {
 
-    	//dump(Db::query("select * from box_gdt"));
+    	dump(Db::query("select * from box_gdt"));
 
-    	//Log::info('查看是否存在记录');
+    	Log::info('查看是否存在记录');
 
     // $res =Db::table('box_gdt')
     // ->where('master_id','0')
