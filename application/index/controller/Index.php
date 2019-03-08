@@ -1,6 +1,6 @@
 <?php
 namespace app\index\controller;
-use think\log;
+//use think\log;
 use think\Db;
 
 class Index
@@ -10,7 +10,7 @@ class Index
 
     	//dump(Db::query("select * from box_gdt"));
 
-    	Log::info('查看是否存在记录');
+    	//Log::info('查看是否存在记录');
     //$res =Db::table('box_gdt')->where('master_id',0)->select();
      //$res=Db::table('box_gdt')->where('master_id','0')->select();
      dump(Db::table('box_gdt')->where('master_id',0)->select());
