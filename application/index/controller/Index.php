@@ -11,7 +11,7 @@ class Index
     	//dump(Db::query("select * from box_gdt"));
 
     	Log::info('查看是否存在记录');
- $res=Db::query("select * from box_gdt");
+ $res=Db::query("select * from box_gdt")
     //$res =Db::table('box_gdt')->where('master_id',0)->select();
      //$res=Db::table('box_gdt')->where('master_id','0')->select();
      dump($res);
