@@ -13,15 +13,15 @@ return [
     // 数据库类型
     'type'            => 'mysql',
     // 服务器地址
-    'hostname'        => '127.0.0.1',
+    'hostname'        => '47.106.253.110',
     // 数据库名
-    'database'        => '',
+    'database'        => 'studyphp',
     // 用户名
-    'username'        => 'root',
+    'username'        => 'studyphp',
     // 密码
-    'password'        => '',
+    'password'        => 'a3216953',
     // 端口
-    'hostport'        => '',
+    'hostport'        => '3306',
     // 连接dsn
     'dsn'             => '',
     // 数据库连接参数
