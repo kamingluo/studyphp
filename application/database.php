@@ -13,15 +13,15 @@ return [
     // 数据库类型
     'type'            => 'mysql',
     // 服务器地址
-    'hostname'        => '47.106.253.110',
+    'hostname'        => '127.0.0.1',
     // 数据库名
-    'database'        => 'studyphp',
+    'database'        => '',
     // 用户名
-    'username'        => 'studyphp',
+    'username'        => 'root',
     // 密码
-    'password'        => 'a3216953',
+    'password'        => '',
     // 端口
-    'hostport'        => '3306',
+    'hostport'        => '',
     // 连接dsn
     'dsn'             => '',
     // 数据库连接参数
@@ -52,4 +52,12 @@ return [
     'datetime_format' => 'Y-m-d H:i:s',
     // 是否需要进行SQL性能分析
     'sql_explain'     => false,
+    // Builder类
+    'builder'         => '',
+    // Query类
+    'query'           => '\\think\\db\\Query',
+    // 是否需要断线重连
+    'break_reconnect' => false,
+    // 断线标识字符串
+    'break_match_str' => [],
 ];
