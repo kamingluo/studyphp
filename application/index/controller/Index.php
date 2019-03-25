@@ -3,6 +3,8 @@ namespace app\index\controller;
 //use think\log;
 use think\Db;
 
+use think\Config;
+
 class Index
 {
     public function index()
@@ -16,6 +18,6 @@ class Index
         $res1=Db::table('index_box')->select();
         dump($res1);
         //dump("1234")
-        // dump(Config::get());	
+         dump(Config::get());	
     }
 }
