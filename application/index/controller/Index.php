@@ -13,9 +13,9 @@ class Index
     	//Log::info('查看是否存在记录');
         // $res =Db::table('box_gdt')->where('master_id',0)->select();
         // dump($res);
-        // $res1=Db::table('index_box')->select();
-        // dump($res1);
+        $res1=Db::table('index_box')->select();
+        dump($res1);
         //dump("1234")
-         dump(Config::get());	
+        // dump(Config::get());	
     }
 }
