@@ -19,7 +19,7 @@ class Index
         //dump($res);
        $res1=Db::table('index_box')->select();
         //dump($res1);
-        echo json_encode($res1);
+        dump json_encode($res1);
         
 
         //打印配置信息
