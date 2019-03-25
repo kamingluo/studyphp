@@ -18,10 +18,11 @@ class Index
        // $res =Db::table('box_gdt')->where('master_id',0)->select();
         //dump($res);
        $res1=Db::table('index_box')->select();
-        dump($res1);
+        //dump($res1);
+        echo json_encode($res1);
         
 
         //打印配置信息
-        dump(Config::get());	
+        //dump(Config::get());	
     }
 }
