@@ -15,7 +15,7 @@ class Index
         // dump($res);
         // $res1=Db::table('index_box')->select();
         // dump($res1);
-        dump("1234")
-         //dump(Config::get());	
+        //dump("1234")
+         dump(Config::get());	
     }
 }
