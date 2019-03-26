@@ -7,7 +7,7 @@ class Banner
     public function index()
     {
 
-    	return  "index模块下的banner控制器banner方法" ;
+    	return  "index模块下的banner控制器banner类index方法" ;
        
     }
 }

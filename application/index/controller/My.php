@@ -7,7 +7,7 @@ class My
 {
     public function index()
     {
-       return  "index模块下的my控制器index方法" ;
+       return  "index模块下的my控制器my类index方法" ;
     }
     
 }
