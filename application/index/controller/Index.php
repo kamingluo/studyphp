@@ -25,4 +25,13 @@ class Index
         //打印配置信息
         //dump(Config::get());	
     }
+
+    public function ceshi()
+    {
+        return  "index模块下的index控制器ceshi方法" ;
+    }
+     public function test()
+    {
+        return  "index模块下的index控制器test方法" ;
+    }
 }
