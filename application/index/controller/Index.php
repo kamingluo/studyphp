@@ -28,10 +28,10 @@ class Index
 
     public function ceshi()
     {
-        return  "index模块下的index控制器ceshi方法777" ;
+        return  "index模块下的index控制器ceshi方法888" ;
     }
      public function test()
     {
-        return  "index模块下的index控制器test方法66666" ;
+        return  "index模块下的index控制器test方法9999" ;
     }
 }
