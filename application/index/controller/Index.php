@@ -32,6 +32,6 @@ class Index
     }
      public function test()
     {
-        return  "index模块下的index控制器test方法" ;
+        return  "index模块下的index控制器test方法1111" ;
     }
 }
