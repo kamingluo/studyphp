@@ -13,6 +13,7 @@ class Usedcar
        $a="{\"msg\":\"\",\"success\":true,\"FinancialProductList\":[],\"price\":28.14,\"status\":100}";
        $b=stripslashes($a);
        echo $b;
+       echo "ceshi";
        //return  "index模块下的my控制器my类index方法11111111" ;
     }
     
