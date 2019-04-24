@@ -19,7 +19,7 @@ return [
     // 用户名
     'username'        => 'studyphp',
     // 密码
-    'password'        => 'a3216953',
+    'password'        => 'a3216953B',
     // 端口
     'hostport'        => '3306',
     // 连接dsn
