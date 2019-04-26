@@ -7,7 +7,7 @@ namespace app\api\controller;
 
 class Express
 {
-    public function index()
+     public function index()
     {//定义一个要发送的目标URL；
        $expressNumber=$_GET['number'];//拿到快递单号
        $url = 'https://www.kuaidi100.com/autonumber/autoComNum';
