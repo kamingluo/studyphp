@@ -20,7 +20,6 @@ class Express
        $arr = json_decode($httpstr,true);
        //echo $arr['auto'][0]['comCode'];
        $comCode=$arr['auto'][0]['comCode'];//拿到快递名称
-       sleep(2);
       
        $expressurl='https://www.kuaidi100.com/query';
        $data2['type']=$comCode;
