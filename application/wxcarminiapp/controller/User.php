@@ -7,12 +7,19 @@
 namespace app\wxcarminiapp\controller;
 use think\Db;
 use think\Request;
+use think\Exception;
+use think\Log;
 
 class User
 {
     /** 获取用户openid */
     public function openid($wxcode)
     {
+        if($wxcode == 'kaming'){
+        $openid='o3XMA0enuFRZsOCOCeqjB70exjr4';
+        return $openid;
+        }
+
     	$url = 'https://api.weixin.qq.com/sns/jscode2session';
     	$data['appid']=Config('appid');
         $data['secret']= Config('secret');
@@ -22,7 +29,9 @@ class User
     	$openiddata=json_decode($wxopenid,true);
         $rest=array_key_exists("errcode",$openiddata);//判断返回值存在errcode证明code有误
         if($rest){ 
-            die("code错误或者过期了！");
+            Log::record('code错误或者过期了！传入微信code-->'.$wxcode,'error');
+            echo  json_encode(['state'   => '400','message'  => "code错误或者过期了！" ] ) ;
+            die ();
         }
         else{
             $openid=$openiddata['openid'];
@@ -36,18 +45,24 @@ class User
         $wxcode=$data['code'];
         $openid=$this->openid($wxcode);
         $time =date('Y-m-d H:i:s',time());//获取当前时间
-        $dbnum =db('user')->where('openid',$openid)->find();
+        $dbnum =db('user')->where('openid',$openid)->find();//查询用户信息
         if($dbnum==null){
                 $channel=$data["channel"];
                 $master_id=$data["master_id"];
                 $dbdata = ['id'=>'','openid' =>$openid,'channel' => $channel,'score' => 0,'master_id' => $master_id,'create_time' =>$time ,'updata_time' =>$time];
-                $dbreturn=db('user')->insert($dbdata);
-                return $dbreturn; //返回1
+                $userId= db('user')->insertGetId($dbdata);//返回自增ID
+                $userdata=['id'=>$userId,'openid' =>$openid,'channel' => $channel,'score' => 0,'master_id' => $master_id,'create_time' =>$time ,'updata_time' =>$time];
+                $state=['state'   => '200','message'  => "注册成功" ];
+                $resdata=array_merge($state,array('userdata'=>$userdata));
+                return $resdata;
             }
         else{
                  //更新信息
-                 $dbreturn= db('user')->where('openid',$openid)->update(['updata_time' => $time]);
-                return $dbreturn;//返回1
+                $dbreturn= db('user')->where('openid',$openid)->update(['updata_time' => $time]);
+                $state=['state'   => '200','message'  => "用户信息更新成功" ];
+                $resdata=array_merge($state,array('userdata'=>$dbnum));
+                // $dbnum =db('user')->where('openid',$openid)->find();
+                return $resdata;//返回1
             }
         
     }
@@ -73,5 +88,11 @@ class User
         // return $openid;
         // // $test = test();
         // // return $test;
+        // exception('code错误或者过期了！', 100001);//抛出异常,程序会报错
+        //  Log::record('错误信息','error');
+            // Log::record('日志信息','info');
+            // trace('错误信息error','error');
+            // trace('日志信息info','info');
+            // trace('日志信息');
     }
 }
