@@ -5,6 +5,6 @@ return [
     //'default_return_type'    => 'json',
     'carurl'=>'http://v.juhe.cn/usedcar',
     'mykey'=>'d26555c5f122f182cb078ab804786329',
-    'appid'=>'wxd53f125c7e4c7d44',//微信小程序appid
-    'secret'=>'07f5c193225590c07c8193fd53e4b2a2',//微信小程序appscret
+    'appid'=>'wxa47bf5fe7f026481',//微信小程序appid
+    'secret'=>'e71338b7c4c0ae2beab367612067b3bf',//微信小程序appscret
 ];
