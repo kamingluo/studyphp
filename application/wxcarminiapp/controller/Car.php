@@ -64,7 +64,7 @@ class Car
         $url = 'https://api.jisuapi.com/illegal/carorg2';
         $data['appkey']= '93b506e2c39ebcd3';
         $resdata = http($url, $data, 'GET');
-        return  $resdata;
+        return  json_decode($resdata,true);
     }
 
 
