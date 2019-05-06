@@ -33,9 +33,9 @@ class Car
         $dbnum =db('car')->where('lsprefix',$request->param("lsprefix"))->where('lsnum',$request->param("lsnum"))->find();//查询信息
         $time =date('Y-m-d H:i:s',time());//获取当前时间
         if($dbnum == null){
-        	 $dbdata = ['id'=>'','openid' =>$openid,'lsprefix' =>$request->param("lsprefix"),'lsnum' => $request->param("lsnum"),'frameno' =>$request->param("frameno"),'engineno' => $request->param("engineno"),'create_time' =>$time ,'updata_time' =>$time];
+        	 $dbdata = ['id'=>'','openid' =>$openid,'lsprefix' =>$request->param("lsprefix"),'lsnum' => $request->param("lsnum"),'frameno' =>$request->param("frameno"),'engineno' => $request->param("engineno"),'mobile' => $request->param("mobile"),'create_time' =>$time ,'updata_time' =>$time];
              $Id= db('car')->insertGetId($dbdata);//返回自增ID
-             $cardata=['id'=>$Id,'openid' =>$openid,'lsprefix' =>$request->param("lsprefix"),'lsnum' => $request->param("lsnum"),'frameno' =>$request->param("frameno"),'engineno' => $request->param("engineno"),'create_time' =>$time ,'updata_time' =>$time];
+             $cardata=['id'=>$Id,'openid' =>$openid,'lsprefix' =>$request->param("lsprefix"),'lsnum' => $request->param("lsnum"),'frameno' =>$request->param("frameno"),'engineno' => $request->param("engineno"),'mobile' => $request->param("mobile"),'create_time' =>$time ,'updata_time' =>$time];
              $state=['state'   => '200','message'  => "添加车辆成功" ];
              $resdata=array_merge($state,array('cardata'=>$cardata));
              return $resdata;
