@@ -4,7 +4,7 @@
 // +----------------------------------------------------------------------
  
 
-namespace app\wxcarminiapp\controller;
+namespace app\express\controller;
 use think\Db;
 use think\Request;
 use think\Exception;

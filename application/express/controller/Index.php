@@ -1,5 +1,5 @@
 <?php
-namespace app\home\controller;
+namespace app\express\controller;
 use think\Db;
 
 use think\Config;
