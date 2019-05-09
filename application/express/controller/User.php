@@ -73,7 +73,9 @@ class User
     {
         $wxcode =$request->param("code");//接收所有传过来的值
         $openid=openid($wxcode);
-        return $openid;
+        $state=['state'   => '200','message'  => "获取用户openid成功" ];
+        $resdata=array_merge($state,array('openid'=>$openid));
+        return $resdata;
     }
 
 }
