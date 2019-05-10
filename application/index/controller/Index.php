@@ -17,13 +17,13 @@ class Index
         //
        // $res =Db::table('box_gdt')->where('master_id',0)->select();
         //dump($res);
-       $res1=Db::table('index_box')->select();
+       // $res1=Db::table('index_box')->select();
         //dump($res1);
         //echo  json_encode($res1);
-        return $res1 ;
+        // return $res1 ;
 
         //打印配置信息
-        //dump(Config::get());	
+        dump(Config::get());	
     }
 
     public function ceshi()
@@ -33,5 +33,12 @@ class Index
      public function test()
     {
         return  "index模块下的index控制器test方法2222" ;
+    }
+
+    public function sendEmail()
+    {
+        $data=sendEmail([['user_email'=>'954087620@qq.com','content'=>'资源鸟，让一切变得简单，加qq
+     群 623918245 畅聊']]);
+        return   $data ;
     }
 }
