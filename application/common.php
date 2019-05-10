@@ -56,6 +56,7 @@ function http($url, $params, $method = 'GET', $header = array(), $multi = false)
 /**
 * 发送邮箱
 * @param type $data 邮箱队列数据 包含邮箱地址 内容
+* 在本地发送不成功，服务器上才行
 */
 function sendEmail($data = []) {
 

@@ -35,7 +35,7 @@ class Index
         return  "index模块下的index控制器test方法2222" ;
     }
 
-    public function sendEmail()
+    public function sendEmail() //本地发送不成功，服务器上才行
     {
         $data=sendEmail([['user_email'=>'954087620@qq.com','content'=>'资源鸟，让一切变得简单，加qq
      群 623918245 畅聊']]);
