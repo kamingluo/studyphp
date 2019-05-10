@@ -9,7 +9,7 @@ class Express
     {
     	$wxcode =$request->param("code");
         $openid=openid($wxcode);
-        $expressdata =db('express')->where('openid',$openid)-> select();//查询信息
+        $expressdata =db('express')->where('openid',$openid)->order('updata_time desc')-> select();//查询信息
         $state=['state'   => '200','message'  => "获取用户快递信息列表成功" ];
         $resdata=array_merge($state,array('userexpressdata'=>$expressdata));
         return  $resdata;
