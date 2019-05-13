@@ -44,21 +44,25 @@ class User
         $data = $request->param();//接收所有传过来的post值
         $wxcode=$data['code'];
         $openid=$this->openid($wxcode);
+        $scene=$request->param("scene");
+        if($scene==null){
+             $scene='0000';
+        }
         $time =date('Y-m-d H:i:s',time());//获取当前时间
         $dbnum =db('user')->where('openid',$openid)->find();//查询用户信息
         if($dbnum==null){
                 $channel=$data["channel"];
                 $master_id=$data["master_id"];
-                $dbdata = ['id'=>'','openid' =>$openid,'channel' => $channel,'score' => 0,'master_id' => $master_id,'create_time' =>$time ,'updata_time' =>$time];
+                $dbdata = ['id'=>'','openid' =>$openid,'channel' => $channel,'scene' => $scene,'score' => 0,'master_id' => $master_id,'create_time' =>$time ,'updata_time' =>$time];
                 $userId= db('user')->insertGetId($dbdata);//返回自增ID
-                $userdata=['id'=>$userId,'openid' =>$openid,'channel' => $channel,'score' => 0,'master_id' => $master_id,'create_time' =>$time ,'updata_time' =>$time];
+                $userdata=['id'=>$userId,'openid' =>$openid,'channel' => $channel,'scene' => $scene,'score' => 0,'master_id' => $master_id,'create_time' =>$time ,'updata_time' =>$time];
                 $state=['state'   => '200','message'  => "注册成功" ];
                 $resdata=array_merge($state,array('userdata'=>$userdata));
                 return $resdata;
             }
         else{
                  //更新信息
-                $dbreturn= db('user')->where('openid',$openid)->update(['updata_time' => $time]);
+                $dbreturn= db('user')->where('openid',$openid)->update(['updata_time' => $time,'scene' => $scene]);
                 $state=['state'   => '200','message'  => "用户信息更新成功" ];
                 $resdata=array_merge($state,array('userdata'=>$dbnum));
                 // $dbnum =db('user')->where('openid',$openid)->find();

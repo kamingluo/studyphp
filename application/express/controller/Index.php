@@ -9,16 +9,24 @@ class Index
     public function index()
     {
 
-    	return  "home模块下的index控制器index方法" ;
+    	return  "express模块下的index控制器index方法" ;
     }
     
-
-    public function ceshi()
+    //首页下面第三方小程序广告配置列表
+    public function bottomminiappad()
     {
-        return  "home模块下的index控制器ceshi方法" ;
+       $dbdata=db('index_bottom_miniapp_ad')->where('open',0)->order('id asc')->select();//查询小盟广告配置信息
+        $state=['state'   => '200','message'  => "首页下面第三方小程序列表查询成功" ];
+        $resdata=array_merge($state,array('indexminiappdata'=>$dbdata));
+        return $resdata ;
     }
-     public function test()
+
+    //首页顶部轮播图配置
+     public function topswiper()
     {
-        return  "home模块下的index控制器test方法" ;
+        $dbdata=db('index_top_swiper')->where('open',0)->order('id asc')->select();//查询小盟广告配置信息
+        $state=['state'   => '200','message'  => "首页顶部轮播图列表查询成功" ];
+        $resdata=array_merge($state,array('indexminiappdata'=>$dbdata));
+        return $resdata ;
     }
 }

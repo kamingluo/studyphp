@@ -23,7 +23,8 @@ class Index
         // return $res1 ;
 
         //打印配置信息
-        dump(Config::get());	
+        // dump(Config::get());	
+        return "kaming的服务器";
     }
 
     public function ceshi()
