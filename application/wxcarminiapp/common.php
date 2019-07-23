@@ -24,7 +24,7 @@ function openid($wxcode){
         return $openid;
 
     }
-    $url = 'https://api.weixin.qq.com/sns/jscode2session';
+    $url = 'https://api.q.qq.com/sns/jscode2session';
     $data['appid']=Config('appid');
     $data['secret']= Config('secret');
     $data['js_code']= $wxcode;
@@ -42,7 +42,6 @@ function openid($wxcode){
         	return $openid;
         }
 }
-
 
 
 
